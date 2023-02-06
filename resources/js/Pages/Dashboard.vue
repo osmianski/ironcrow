@@ -1,6 +1,8 @@
 <script setup>
 import { Head } from '@inertiajs/inertia-vue3';
 import LayoutUser from "@/Components/LayoutUser.vue";
+import financialGraph from '../../images/financial-graph.svg';
+
 </script>
 
 <template>
@@ -14,7 +16,7 @@ import LayoutUser from "@/Components/LayoutUser.vue";
                 However, it's not there yet. I'm just getting started!
             </p>
             <p class="text-center mt-20 mb-5">
-                <img class="inline w-1/2" src="/images/financial-graph.svg">
+                <img class="inline w-1/2" :src="financialGraph">
             </p>
             <p class="text-center">
                 <a href="https://iconscout.com/illustrations/financial-graph" target="_blank">Financial graph Illustration</a> by <a href="https://iconscout.com/contributors/iconscout">IconScout Store</a> on <a href="https://iconscout.com">IconScout</a>

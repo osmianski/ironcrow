@@ -37,12 +37,14 @@ class HandleInertiaRequests extends Middleware
     public function share(Request $request): array
     {
         $props = array_merge(parent::share($request), [
+            'homeUrl' => route('Home'),
             'loginUrl' => route('Login'),
         ]);
 
         if (auth()->id()) {
             $props = array_merge($props, [
                 'logoutUrl' => route('Logout'),
+                'dashboardUrl' => route('Home'),
                 'userListUrl' => route('UserList'),
             ]);
         }

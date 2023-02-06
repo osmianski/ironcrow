@@ -1,6 +1,8 @@
 <script setup>
 import { Head } from '@inertiajs/inertia-vue3';
 import LayoutGuest from "@/Components/LayoutGuest.vue";
+import startBusiness from '../../images/start-business.svg';
+
 </script>
 
 <template>
@@ -14,7 +16,7 @@ import LayoutGuest from "@/Components/LayoutGuest.vue";
                 However, it's not there yet. I'm just getting started!
             </p>
             <p class="text-center mt-20 mb-5">
-                <img class="inline w-1/2" src="/images/start-business.svg">
+                <img class="inline w-1/2" :src="startBusiness">
             </p>
             <p class="text-center">
                 <a href="https://iconscout.com/illustrations/start-business" target="_blank">Start business Illustration</a> by <a href="https://iconscout.com/contributors/pixel-true-designs">Pixel True</a> on <a href="https://iconscout.com">IconScout</a>
