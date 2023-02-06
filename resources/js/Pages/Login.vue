@@ -1,6 +1,6 @@
 <script setup>
 import { Head, useForm } from '@inertiajs/inertia-vue3';
-import NoLayout from "@/Components/NoLayout.vue";
+import LayoutEmpty from "@/Components/LayoutEmpty.vue";
 import FormInput from "@/Components/FormInput.vue";
 
 const props = defineProps({
@@ -21,7 +21,7 @@ const submit = () => {
 </script>
 
 <template>
-    <NoLayout>
+    <LayoutEmpty>
         <Head title="Sign in" />
 
         <main class="flex flex-col justify-center py-12 sm:px-6 lg:px-8 sm:w-[40rem]">
@@ -44,5 +44,5 @@ const submit = () => {
                 </div>
             </div>
         </main>
-    </NoLayout>
+    </LayoutEmpty>
 </template>
