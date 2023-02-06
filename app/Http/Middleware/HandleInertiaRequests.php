@@ -43,6 +43,7 @@ class HandleInertiaRequests extends Middleware
         if (auth()->id()) {
             $props = array_merge($props, [
                 'logoutUrl' => route('Logout'),
+                'userListUrl' => route('UserList'),
             ]);
         }
 

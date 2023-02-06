@@ -6,7 +6,7 @@ import LayoutGuest from "@/Components/LayoutGuest.vue";
 <template>
     <LayoutGuest>
         <Head title="Home page will be here" />
-        <main class="mx-auto max-w-7xl p-6">
+        <main class="mx-auto max-w-7xl p-4">
             <h1 class="text-2xl text-center">
                 An awesome home page will be here!
             </h1>

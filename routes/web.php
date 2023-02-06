@@ -38,3 +38,7 @@ Route::post('logout', function (Request $request) {
     $request->session()->regenerateToken();
     return redirect(route('Home'));
 })->name('Logout');
+
+Route::get('users', function () {
+    return inertia('UserList');
+})->name('UserList');
