@@ -20,25 +20,27 @@ Route::get('/', function () {
     return auth()->id()
         ? inertia('Dashboard')
         : inertia('Home');
-})->name('Home');
+})->name('home');
 
 Route::get('login', function () {
     return inertia('Login');
-})->name('Login');
+})->name('login');
 
 Route::post('login', function (LoginRequest $request) {
     $request->authenticate();
     $request->session()->regenerate();
-    return redirect()->intended(route('Home'));
+    return redirect()->intended(route('home'));
 });
 
-Route::post('logout', function (Request $request) {
-    Auth::guard('web')->logout();
-    $request->session()->invalidate();
-    $request->session()->regenerateToken();
-    return redirect(route('Home'));
-})->name('Logout');
+Route::middleware('auth')->group(function () {
+    Route::post('logout', function (Request $request) {
+        Auth::guard('web')->logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect(route('home'));
+    })->name('logout');
 
-Route::get('users', function () {
-    return inertia('UserList');
-})->name('UserList');
+    Route::get('users', function () {
+        return inertia('UserList');
+    })->name('user.list');
+});
