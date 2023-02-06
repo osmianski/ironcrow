@@ -15,17 +15,19 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return inertia('Home');
-})->name('home');
+    return auth()->id()
+        ? inertia('Dashboard')
+        : inertia('Home');
+})->name('Home');
 
 Route::get('login', function () {
     return inertia('Login');
-})->name('login');
+})->name('Login');
 
 Route::post('login', function (LoginRequest $request) {
     $request->authenticate();
 
     $request->session()->regenerate();
 
-    return redirect()->intended(route('home'));
+    return redirect()->intended(route('Home'));
 });
