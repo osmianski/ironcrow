@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Requests\LoginRequest;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,3 +21,11 @@ Route::get('/', function () {
 Route::get('login', function () {
     return inertia('Login');
 })->name('login');
+
+Route::post('login', function (LoginRequest $request) {
+    $request->authenticate();
+
+    $request->session()->regenerate();
+
+    return redirect()->intended(route('home'));
+});
