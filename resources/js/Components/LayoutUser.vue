@@ -18,8 +18,8 @@ import { Link } from '@inertiajs/inertia-vue3';
                 </MenuItems>
             </Menu>
             <div class="flex-grow"></div>
-            <Link :href="$page.props.loginUrl" title="Sign in">
-                <span class="sr-only">Sign in</span>
+            <Link :href="$page.props.logoutUrl" method="post" as="button">
+                <span class="sr-only">Log out</span>
                 <UserIcon class="w-14 h-14 p-4 hover:bg-gray-100" aria-hidden="true" />
             </Link>
         </div>

@@ -7,10 +7,7 @@ defineProps({
         type: String,
         required: true,
     },
-    name: {
-        type: String,
-        required: true,
-    },
+    name: String,
     type: {
         type: String,
         default: 'text',

@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Requests\LoginRequest;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,8 +28,13 @@ Route::get('login', function () {
 
 Route::post('login', function (LoginRequest $request) {
     $request->authenticate();
-
     $request->session()->regenerate();
-
     return redirect()->intended(route('Home'));
 });
+
+Route::post('logout', function (Request $request) {
+    Auth::guard('web')->logout();
+    $request->session()->invalidate();
+    $request->session()->regenerateToken();
+    return redirect(route('Home'));
+})->name('Logout');
