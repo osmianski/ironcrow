@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Requests\LoginRequest;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -41,6 +42,9 @@ Route::middleware('auth')->group(function () {
     })->name('logout');
 
     Route::get('users', function () {
-        return inertia('UserList');
+        return inertia('UserList', [
+            'list' => User::orderBy('name')
+                ->paginate(12, ['id', 'name', 'email']),
+        ]);
     })->name('user.list');
 });
