@@ -40,12 +40,12 @@ defineProps({
                         <div v-if="!link.url"
                              class="relative inline-flex items-center border py-2 text-sm font-medium focus:z-20"
                              :class="{
-                                                        'z-10 bg-indigo-50 border-indigo-500 text-indigo-600': link.active,
-                                                        'bg-white border-gray-300 text-gray-500 hover:bg-gray-50': !link.active,
-                                                        'rounded-l-md px-2': idx === 0,
-                                                        'rounded-r-md px-2': idx === list.links.length - 1,
-                                                        'px-4': idx !== 0 && idx !== list.links.length - 1
-                                                    }"
+                                 'z-10 bg-indigo-50 border-indigo-500 text-indigo-600': link.active,
+                                 'bg-white border-gray-300 text-gray-500 hover:bg-gray-50': !link.active,
+                                 'rounded-l-md px-2': idx === 0,
+                                 'rounded-r-md px-2': idx === list.links.length - 1,
+                                 'px-4': idx !== 0 && idx !== list.links.length - 1
+                             }"
                         >
                             <span v-if="idx === 0" class="sr-only">Previous</span>
                             <span v-else-if="idx === list.links.length - 1" class="sr-only">Next</span>
@@ -57,12 +57,12 @@ defineProps({
                         <Link v-else :href="link.url"
                               class="relative inline-flex items-center border py-2 text-sm font-medium focus:z-20"
                               :class="{
-                                                        'z-10 bg-indigo-50 border-indigo-500 text-indigo-600': link.active,
-                                                        'bg-white border-gray-300 text-gray-500 hover:bg-gray-50': !link.active,
-                                                        'rounded-l-md px-2': idx === 0,
-                                                        'rounded-r-md px-2': idx === list.links.length - 1,
-                                                        'px-4': idx !== 0 && idx !== list.links.length - 1
-                                                    }"
+                                  'z-10 bg-indigo-50 border-indigo-500 text-indigo-600': link.active,
+                                  'bg-white border-gray-300 text-gray-500 hover:bg-gray-50': !link.active,
+                                  'rounded-l-md px-2': idx === 0,
+                                  'rounded-r-md px-2': idx === list.links.length - 1,
+                                  'px-4': idx !== 0 && idx !== list.links.length - 1
+                              }"
                         >
                             <span v-if="idx === 0" class="sr-only">Previous</span>
                             <span v-else-if="idx === list.links.length - 1" class="sr-only">Next</span>
