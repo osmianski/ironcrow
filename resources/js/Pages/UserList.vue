@@ -1,5 +1,5 @@
 <script setup>
-import { Head, Link } from '@inertiajs/inertia-vue3';
+import { Head } from '@inertiajs/inertia-vue3';
 import LayoutUser from "@/Components/LayoutUser.vue";
 import Paginator from "@/Components/Paginator.vue";
 
